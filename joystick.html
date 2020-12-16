@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Joystick Options &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Development Setup" href="development.html" />
+    <link rel="prev" title="System Control" href="system-control.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-support.html">Raspberry Pi Camera Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-mods.html">Raspberry Pi Camera Mods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html">Adhoc cell tower or connection sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-control.html">System Control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Joystick Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rcoverride-support-warning">RCOverride Support Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physical-joystick">Physical Joystick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#virtual-joystick">Virtual Joystick</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Joystick Options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="joystick-options">
+<span id="joystick"></span><h1>Joystick Options<a class="headerlink" href="#joystick-options" title="Permalink to this headline">¶</a></h1>
+<p>There are quite a few things that has been added to both physical and virtual joystick interface. These additions make it more complete from a hacker/builder perspective but they also make the operation dangerous if you don’t know what you are doing.</p>
+<div class="section" id="rcoverride-support-warning">
+<h2>RCOverride Support Warning<a class="headerlink" href="#rcoverride-support-warning" title="Permalink to this headline">¶</a></h2>
+<p>First among them is the infamous RC Override support. It is a powerful feature but also a dangerous one especially when you are dealing with low travel gaming joysticks and virtual joysticks which don’t provide as much tactical feedback. You might feel why do we have it in education offering? Because it allows you to emulate RC transmitter even when you don’t have one. Please be warned you should not use RC Override or Fixed RC override modes unless you have no other way of achieving what you are trying to achieve. You are always better off in normal mode when using physical or virtual joystick. Now that you have been warned, let’s see what it is.</p>
+<p>RCOverride reads the endpoints from copter parameters and tries to emulate those PWM values. Basically it allows you to emulate your calibrated RC even when you are using Joystick.</p>
+<p>Fixed RC Override doesn’t read from copter parameters, min and max are hard coded at 1020 and 1960 respectively. These are the endpoints where most esc work well and our ESCs are also fixed to these end points. This is when you don’t have an RC at all, but still want to do some operations that require RC. In this case joystick also be calibrated under radio calibration screen.</p>
+<a class="reference external image-reference" href="_images/rc_override.png"><img alt="_images/rc_override.png" src="_images/rc_override.png" /></a>
+</div>
+<div class="section" id="physical-joystick">
+<h2>Physical Joystick<a class="headerlink" href="#physical-joystick" title="Permalink to this headline">¶</a></h2>
+<p>The physical joystick configuration tab appears under vehicle if a joystick is detected. This is pretty much same as upstream QGC with only RC Override support to modes and there is a way to emulate channel 5 onward with joystick buttons. It just adds new PWM values for emulated channel to RC Override message. But again this kind of hacking is only for experimental purposes when you don’t have any other way to achieve that control.</p>
+</div>
+<div class="section" id="virtual-joystick">
+<h2>Virtual Joystick<a class="headerlink" href="#virtual-joystick" title="Permalink to this headline">¶</a></h2>
+<p>The only addition to the way virtual joystick looks and feels is “addition of option for spring loaded joystick”. Spring loaded throttle will center on its own, otherwise it will remain where you leave it.</p>
+<a class="reference external image-reference" href="_images/virtualjoystic_spring.png"><img alt="_images/virtualjoystic_spring.png" src="_images/virtualjoystic_spring.png" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="development.html" class="btn btn-neutral float-right" title="Development Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="system-control.html" class="btn btn-neutral float-left" title="System Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

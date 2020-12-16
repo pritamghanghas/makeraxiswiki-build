@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raspberry Pi Camera Mods &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Adhoc cell tower or connection sharing" href="adhoc-cell-tower-or-connection-sharing.html" />
+    <link rel="prev" title="Raspberry Pi Camera Support" href="raspberry-pi-cam-support.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-support.html">Raspberry Pi Camera Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raspberry Pi Camera Mods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#regular-camera-with-while-light-leds">Regular camera with while light LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#noir-camera-with-ir-leds">NOIR camera with IR LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switable-ir-filter">Switable IR filter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html">Adhoc cell tower or connection sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-control.html">System Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joystick.html">Joystick Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Raspberry Pi Camera Mods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="raspberry-pi-camera-mods">
+<span id="raspberry-pi-cam-mods"></span><h1>Raspberry Pi Camera Mods<a class="headerlink" href="#raspberry-pi-camera-mods" title="Permalink to this headline">¶</a></h1>
+<p>Raspberry Pi camera is quite easy to modify both in software and hardware. We will only discuss hardware mods here.</p>
+<ol class="arabic simple">
+<li><p>Regular camera with white light LEDs</p></li>
+<li><p>NOIR camera with IR LEDs</p></li>
+<li><p>camera with switchable IR filter</p></li>
+</ol>
+<div class="section" id="regular-camera-with-while-light-leds">
+<h2>Regular camera with while light LEDs<a class="headerlink" href="#regular-camera-with-while-light-leds" title="Permalink to this headline">¶</a></h2>
+<p>You can use regular Pi camera module with white light LEDs to illuminate object in the night. But if stealth is desired, you are better off using NOIR camera with IR LEDs.</p>
+</div>
+<div class="section" id="noir-camera-with-ir-leds">
+<h2>NOIR camera with IR LEDs<a class="headerlink" href="#noir-camera-with-ir-leds" title="Permalink to this headline">¶</a></h2>
+<p>If you don’t want the lights to be visible to human eye in the night IR LEDs couples with NOIR camera will do the job.</p>
+<p>The image becomes more like monochrome but visibility is much better</p>
+<img alt="http://www.arducam.com/wp-content/uploads/2017/08/capture_2-1.jpg" src="http://www.arducam.com/wp-content/uploads/2017/08/capture_2-1.jpg" />
+</div>
+<div class="section" id="switable-ir-filter">
+<h2>Switable IR filter<a class="headerlink" href="#switable-ir-filter" title="Permalink to this headline">¶</a></h2>
+<p>All camera sensors are capable of capturing light far into IR spectrum. This changes the color of an image that looks different unnatural to human eye. To avoid the problem, all camera put a IR blocking filter in-front of the sensor. But for low light or IR based night vision capabilities it is sometime better to have the flexibility to switch the filter electronically. Insert when there is sufficient light and remove when there is low light or object is IR Led illuminated.</p>
+<p>The following modules provides that capability. we will also come up with a module that has zoom built in.</p>
+<a class="reference external image-reference" href="_images/picam_with_switable_ir.jpg"><img alt="_images/picam_with_switable_ir.jpg" src="_images/picam_with_switable_ir.jpg" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adhoc-cell-tower-or-connection-sharing.html" class="btn btn-neutral float-right" title="Adhoc cell tower or connection sharing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="raspberry-pi-cam-support.html" class="btn btn-neutral float-left" title="Raspberry Pi Camera Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

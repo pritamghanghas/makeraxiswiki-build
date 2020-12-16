@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raspberry Pi Camera Support &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Raspberry Pi Camera Mods" href="raspberry-pi-cam-mods.html" />
+    <link rel="prev" title="Before You Fly" href="before-you-fly.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raspberry Pi Camera Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#video-streaming-support">Video Streaming Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gimbal-support">Gimbal Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapping-survey-support">Mapping/Survey support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-media-from-raspberry-pi">Downloading media from Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-processing-images">Post Processing Images</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-mods.html">Raspberry Pi Camera Mods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html">Adhoc cell tower or connection sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-control.html">System Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joystick.html">Joystick Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Raspberry Pi Camera Support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="raspberry-pi-camera-support">
+<span id="connection-sharing"></span><h1>Raspberry Pi Camera Support<a class="headerlink" href="#raspberry-pi-camera-support" title="Permalink to this headline">¶</a></h1>
+<p>Support has been added in QGC as well as Raspberry Pi side to support almost all capabilities of Pi camera so that students don’t have much issue playing with it. <a class="reference external" href="https://www.raspberrypi.org/documentation/hardware/camera/">Both Cameras</a> versions v1 and v2 are supported.
+Generally students like to use V1 as it is available cheaper. Both versions are also available in NDVI version from our store. The NDVI version is hacked NOIR sensor with an infra blue filter attached.</p>
+<p>So what all can we do with the onboard Pi camera. The support is in two parts.</p>
+<ol class="arabic simple">
+<li><p>Video streaming support.</p></li>
+<li><p>Mapping/Survey support.</p></li>
+</ol>
+<div class="section" id="video-streaming-support">
+<h2>Video Streaming Support<a class="headerlink" href="#video-streaming-support" title="Permalink to this headline">¶</a></h2>
+<p>All options supported by raspvid camera video utility are supported. In fact the same utility along with gst is used to setup the pipeline on the raspberry pi side. QGC send the full pipeline as a command over http so it is very easy to incorporate new pipelines in QGC, you just have to modify them <a class="reference external" href="https://github.com/makeraxis/qgroundcontrol/blob/makeraxis3.3/src/hb/nodeselector.cpp#L7">here</a>. The options provided in the UI also allow you to toggle on board recording.</p>
+<a class="reference external image-reference" href="_images/video_streaming_options.png"><img alt="_images/video_streaming_options.png" src="_images/video_streaming_options.png" /></a>
+<p>Apart from these you have some options in general settings. These are common with QGC. But in our version of QGC, there is one extra option for jitter buffer. If you are on a high latency network, you should consider increasing this number. e.g. For local Wifi 20ms is good enough. For a VPN running across continents you might have to go as high as 800ms. That is why a setting is given to play around the number till you find the sweet spot that suits your setup best.</p>
+<a class="reference external image-reference" href="_images/jitter_setting.png"><img alt="_images/jitter_setting.png" src="_images/jitter_setting.png" /></a>
+</div>
+<div class="section" id="gimbal-support">
+<h2>Gimbal Support<a class="headerlink" href="#gimbal-support" title="Permalink to this headline">¶</a></h2>
+<p>Gimbal is supported thorugh two axis servo gimbal with adapter plates as shown below.</p>
+<img alt="https://cdn-shop.adafruit.com/1200x900/1967-02.jpg" src="https://cdn-shop.adafruit.com/1200x900/1967-02.jpg" />
+</div>
+<div class="section" id="mapping-survey-support">
+<h2>Mapping/Survey support<a class="headerlink" href="#mapping-survey-support" title="Permalink to this headline">¶</a></h2>
+<p>One can select mapping mode from the camera options as shown in below figure. A separate mode has to be selected because PiCam can’t support both full resolution still images and video output at the same time. Once you have selected mapping mode you can define a survey mission and be assured that the geotagged images will be captured and stored on board storage.</p>
+<a class="reference external image-reference" href="_images/mapping_options.png"><img alt="_images/mapping_options.png" src="_images/mapping_options.png" /></a>
+<p>The Survey and imaging support is provided through a <a class="reference external" href="https://github.com/makeraxis/pi_bins/blob/master/pimjpegserver.py">python script</a> that also exports an mjpeg server.  The script itself uses <a class="reference external" href="https://picamera.readthedocs.io/en/release-1.13/">PiCamera</a> python module for capturing images.</p>
+<p>You can also point any webbrowser browser to <a class="reference external" href="http://10.0.0.1:5555/cam.mjpg">http://10.0.0.1:5555/cam.mjpg</a> to receive full resolution stills. This is true as long as the camera is in mapping mode irrespective of the fact whether you are running a survey mission or not. This makes it a powerful tool to stream full resolution of the sensor rather than limiting yourself of max of 1080p which is just 2MP. In fact all vehicles designed for surveillance should support mjpeg to transmit full resolution images. Full resolution can make a lot of difference when you want to spot smallest of the things on the ground.</p>
+<a class="reference external image-reference" href="_images/mapping_browser.png"><img alt="_images/mapping_browser.png" src="_images/mapping_browser.png" /></a>
+<p>The stream from mjpeg server is not displayed on the QGC screen as there were difficulties in providing zooming options and decent user experience. And most people might not want to have it running as it can be quite taxing on wifi bandwidth. Also someone looking for full resolution images will anyway want those to be displayed on a bigger dedicated screen.</p>
+</div>
+<div class="section" id="downloading-media-from-raspberry-pi">
+<h2>Downloading media from Raspberry Pi<a class="headerlink" href="#downloading-media-from-raspberry-pi" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have either videos or photographs recorded on raspberry Pi. Let’s see how to download them. You can use two methods to access it. If you just want to quickly look up something, you can point your browser to <a class="reference external" href="http://10.0.0.1/media/">http://10.0.0.1/media/</a> and you will see all the media that is there on the Pi.
+But a better method to actually download that media in bulk is to use some sftp client like filezilla. Add a new site configuration like the one shown in the image below.</p>
+<p>Now you can just drag and drop things from remote side to your local machine side.</p>
+<a class="reference external image-reference" href="_images/filezilla.png"><img alt="_images/filezilla.png" src="_images/filezilla.png" /></a>
+</div>
+<div class="section" id="post-processing-images">
+<h2>Post Processing Images<a class="headerlink" href="#post-processing-images" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/OpenDroneMap/WebODM">Webodm</a> is an excellent opensource project that is easy to use as well. It provides a simple web interface and using opendronemap behind the scene to give you complete ortho images and point cloud. If you want to go deeper, it is in python and you can modify it to your requirement.</p>
+<p>A stitched image looks like this. Of course this is much smaller version of it. The full resolution Orthomosaic will be difficult to render in a browser.</p>
+<a class="reference external image-reference" href="_images/ortho_visual.png"><img alt="_images/ortho_visual.png" src="_images/ortho_visual.png" /></a>
+<p>You can also specify various kinds of filters to have a better video of things that you are interested in. here is a DSM view of the same ortho.</p>
+<a class="reference external image-reference" href="_images/ortho_dsm.png"><img alt="_images/ortho_dsm.png" src="_images/ortho_dsm.png" /></a>
+<p>You can also buy NDVI converted raspberry Pi camera from us for vegetation/crop health monitoring.</p>
+<a class="reference external image-reference" href="_images/noir_blue.png"><img alt="_images/noir_blue.png" src="_images/noir_blue.png" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="raspberry-pi-cam-mods.html" class="btn btn-neutral float-right" title="Raspberry Pi Camera Mods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="before-you-fly.html" class="btn btn-neutral float-left" title="Before You Fly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

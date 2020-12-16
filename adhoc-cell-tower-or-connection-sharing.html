@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adhoc cell tower or connection sharing &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="System Control" href="system-control.html" />
+    <link rel="prev" title="Raspberry Pi Camera Mods" href="raspberry-pi-cam-mods.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-support.html">Raspberry Pi Camera Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-mods.html">Raspberry Pi Camera Mods</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adhoc cell tower or connection sharing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#g-4g-usb-modem">3G/4G USB modem.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-the-iptables-file">Edit the Iptables file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="system-control.html">System Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joystick.html">Joystick Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Adhoc cell tower or connection sharing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adhoc-cell-tower-or-connection-sharing">
+<span id="id1"></span><h1>Adhoc cell tower or connection sharing<a class="headerlink" href="#adhoc-cell-tower-or-connection-sharing" title="Permalink to this headline">¶</a></h1>
+<p>Raspberry Pi on the UAV creates wifi access point for video transmission and control. That is how our app connects to the copter. This present another easy opportunity for a feature that can be quite useful in remote areas like forests or mountains. The ability to share an internet connection. As the UAV can fly high, it can easily connect to remote cell towers that are just out of reach from ground. And then it can share that internet connection over wifi. Anyone connected to UAV at that point will receive the shared internet connection.</p>
+<p>So what do we need to setup such a connection sharing.</p>
+<ol class="arabic simple">
+<li><p>3G/4G USB modem.</p></li>
+<li><p>Edit the iptables file for sharing.</p></li>
+</ol>
+<div class="section" id="g-4g-usb-modem">
+<h2>3G/4G USB modem.<a class="headerlink" href="#g-4g-usb-modem" title="Permalink to this headline">¶</a></h2>
+<p>These days mostly modems that you get are portable hotspots that connect to the cell network and share the connection over wifi. If you are using such a device and the range provided by the modem itself is good enough. You can just put the modem on the UAV and done with it. You don’t even have to connect to Raspberry Pi. But if you want to use some external wifi antenna so that you can fly it high up and still connect to it, you need to connect the modem to Pi through USB and then share the modem through Pi’s wifi. Most of these modems show up a wired interface on the Pi.</p>
+<a class="reference external image-reference" href="_images/Connection_sharing_connection.jpg"><img alt="_images/connection_sharing_connection.jpg" src="_images/connection_sharing_connection.jpg" /></a>
+</div>
+<div class="section" id="edit-the-iptables-file">
+<h2>Edit the Iptables file<a class="headerlink" href="#edit-the-iptables-file" title="Permalink to this headline">¶</a></h2>
+<p>We have a file /etc/rc.local on Pi that is executed automatically every time the Pi boots. Use your favorite editor (vi/nano) and open the file</p>
+<a class="reference external image-reference" href="_images/rc_local_file_vi.png"><img alt="_images/rc_local_file_vi.png" src="_images/rc_local_file_vi.png" /></a>
+<p>In the file we have a script that runs in the end that takes two arguments. First argument is the interface which has the internet connection and second argument is the interface which is configured as hotspot for sharing. In the case shown in below image internet is available on eth0 and we are sharing it over our primary wifi interface wifi0</p>
+<a class="reference external image-reference" href="_images/rc_local_file.png"><img alt="_images/rc_local_file.png" src="_images/rc_local_file.png" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="system-control.html" class="btn btn-neutral float-right" title="System Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="raspberry-pi-cam-mods.html" class="btn btn-neutral float-left" title="Raspberry Pi Camera Mods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

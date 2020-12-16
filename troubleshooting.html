@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting FAQs &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Development Setup" href="development.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-support.html">Raspberry Pi Camera Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-mods.html">Raspberry Pi Camera Mods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html">Adhoc cell tower or connection sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-control.html">System Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joystick.html">Joystick Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#i-can-t-connect-to-the-vehicle">I can’t connect to the vehicle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-copter-doesn-t-lift-off">The copter doesn’t lift off</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-copter-flips">The copter flips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raspberry-pi-erratic-behavior">Raspberry Pi erratic behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-information">More information</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Troubleshooting FAQs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting-faqs">
+<span id="troubleshooting"></span><h1>Troubleshooting FAQs<a class="headerlink" href="#troubleshooting-faqs" title="Permalink to this headline">¶</a></h1>
+<p>Things don’t always work as they are supposed to. Don’t loose heart, we are here to help, please follow instructions below to troubleshoot the problem. Take a methodological approach and you will find the cause.</p>
+<div class="section" id="i-can-t-connect-to-the-vehicle">
+<h2>I can’t connect to the vehicle<a class="headerlink" href="#i-can-t-connect-to-the-vehicle" title="Permalink to this headline">¶</a></h2>
+<p>This is most common problem due to the fact that we have several systems and problem can be at lot of places. If you are not able to connect, here the things that you should check in the same order</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>We use Raspberry Pi as hostspot for connecting to vehicles. Check that you are able to connect to wifi hotspot</dt><dd><ul>
+<li><p>if you are not able to connect then check that raspberry pi is connected to power. If so the problem is either with your card or hostapd configuration if you have modified it.</p></li>
+<li><p>in case you image on the Raspberry Pi card has become totally corrupted, please reflash with Hoverbird’s provided image for the product. Flashing instructions can be found <a class="reference external" href="https://www.raspberrypi.org/documentation/installation/installing-images/">here</a>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Now if you are able to get on to the wifi network, next part is the connection between the autopilot and Raspberry Pi</dt><dd><ul>
+<li><p>the physical wire connection might be damaged</p></li>
+<li><p>MavProxy is not running on the Pi due to some misconfiguration, you can manually run to check whether you are able to connect.</p></li>
+<li><p>the serial port on the Pi has not been freed up using raspi-config please refer <a class="reference external" href="http://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html">this page</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The ground station system doesn’t have correct version of QGC. You might be using version from play store, our version is different, you have download either from our website or from the image provided and side load it.</p></li>
+<li><p>Autopilot/Pixhawk has wrong card or not flashed. Format the card on windows and flash copter version 3.5.x, 3.5.x is verified to be working with RW460 and Nexus image provided with the product.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="the-copter-doesn-t-lift-off">
+<h2>The copter doesn’t lift off<a class="headerlink" href="#the-copter-doesn-t-lift-off" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The sensors are mostly likely not calibrated. Go through vehicle setup. Mostly QGC will let you know if sensors are out of whack.</p></li>
+<li><p>The copter is under powered or your battery has become too weak and doesn’t hold charge well enough anymore. Please check how the voltage varies as your apply throttle. Sudden large drops in voltage as you increase throttle is a sign of your battery needs replacement.</p></li>
+</ul>
+</div>
+<div class="section" id="the-copter-flips">
+<h2>The copter flips<a class="headerlink" href="#the-copter-flips" title="Permalink to this headline">¶</a></h2>
+<p>The most common cause might be that you have connected propeller wrong. It is impossible to do if you are using our setup of motor/esc and propellers as they are matched and self tightening.</p>
+</div>
+<div class="section" id="raspberry-pi-erratic-behavior">
+<h2>Raspberry Pi erratic behavior<a class="headerlink" href="#raspberry-pi-erratic-behavior" title="Permalink to this headline">¶</a></h2>
+<p>It reboots randomly, wifi goes off randomly. This almost always means problem with the power supply. Shutdown the system immediately and check the power coming to raspberry Pi. It should be 5V within 0.2v variance.
+Frequent reboots are generally associated with power supply not holding up when Pi draws more current under load. While wifi erratic behavior and overheating is generally caused by over voltage which can even fry you Pi.</p>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>More troubleshooting in general about ardupilot can be found <a class="reference external" href="http://ardupilot.org/copter/docs/troubleshooting.html">here</a>. If you still have problem about Nexus or our product you can always ask it in <a class="reference external" href="http://forums.makeraxis.in">makeraxis forums</a>. For questions in general about ardupilot itself can be asked on <a class="reference external" href="https://discuss.ardupilot.org/">ardupilot forums</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="development.html" class="btn btn-neutral float-left" title="Development Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

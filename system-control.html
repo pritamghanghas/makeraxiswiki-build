@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System Control &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Joystick Options" href="joystick.html" />
+    <link rel="prev" title="Adhoc cell tower or connection sharing" href="adhoc-cell-tower-or-connection-sharing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-support.html">Raspberry Pi Camera Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-mods.html">Raspberry Pi Camera Mods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html">Adhoc cell tower or connection sharing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">System Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#companion-os-control">Companion OS Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wifi-hotspot-control">Wifi Hotspot Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-external-wifi-for-additional-range">Using external Wifi for additional range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enable-unsafe-modes">Enable Unsafe Modes:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joystick.html">Joystick Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>System Control</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="system-control">
+<span id="id1"></span><h1>System Control<a class="headerlink" href="#system-control" title="Permalink to this headline">¶</a></h1>
+<p>This is our own corner in QGC settings that is specific to the image that we run on Companion computer. We decided to bunch all these settings together in a separate screen, so that it is relatively easy to merge with upstream QGC.</p>
+<a class="reference external image-reference" href="_images/raspberry_pi_control.png"><img alt="_images/raspberry_pi_control.png" src="_images/raspberry_pi_control.png" /></a>
+<div class="section" id="companion-os-control">
+<h2>Companion OS Control<a class="headerlink" href="#companion-os-control" title="Permalink to this headline">¶</a></h2>
+<p>First group with heading ‘Drone OS’__ is primarily meant to shut down or restart Raspberry Pi cleanly. These two operations always ask for confirmation as they can be dangerous if done in flight. These were necessary because if you just power cycle the Pi, you will corrupt the SD card sooner than later.</p>
+</div>
+<div class="section" id="wifi-hotspot-control">
+<h2>Wifi Hotspot Control<a class="headerlink" href="#wifi-hotspot-control" title="Permalink to this headline">¶</a></h2>
+<p>Our image creates a hotspot on the vehicle. Any device that wants to interact with the vehicle has to connect to this hotspot. You can connect multiple devices but only one should run QGC.</p>
+<p>The hotspot is also handy as a portable mobile tower in places where there is no coverage. A copter rising up 100m or 200m above ground can get good cell signal. Then it can beam it down to wifi connected devices on the ground. If you are in a urban area it might be worthwhile to choose a different channel based on your local interference pattern.</p>
+<p>The hotspot settings allow you to change the name of your network as well as password. These settings take effect after a restart.</p>
+<p>The settings also allow you set the channel. This can be very handy in order to avoid dance wifi areas where the current channel may have too much interference and thus poor bandwidth. You can use android utility like <a class="reference external" href="https://play.google.com/store/apps/details?id=com.farproc.wifi.analyzer&amp;hl=en_US">Wifi Analyzer</a> to find the best channel (most free channel).</p>
+</div>
+<div class="section" id="using-external-wifi-for-additional-range">
+<h2>Using external Wifi for additional range<a class="headerlink" href="#using-external-wifi-for-additional-range" title="Permalink to this headline">¶</a></h2>
+<p>The onboard wifi on Raspberry Pi doesn’t is not much a range champion. It mostly starts loosing connectivity in 500m or so in most ideal conditions. But you can pick up any of the Linux supported wifi devices in the market. They come in all shapes and sizes. A good wifi dongle with standard 4dbi antenna should be able to give you a range of upto 1-2km in line of sight. For more range go for better antenna on both sides. Even on the phone/laptop (basically QGC side as well).</p>
+<p>There are only two places that required change to switch from internal to external wifi
+* change the /etc/hostapd/hostapd.conf file to reflect the new device
+* change the /etc/rc.local to reflect the new device. This is required only if you are using connection sharing <a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html#adhoc-cell-tower-or-connection-sharing"><span class="std std-ref">Adhoc cell tower or connection sharing</span></a></p>
+</div>
+<div class="section" id="enable-unsafe-modes">
+<h2>Enable Unsafe Modes:<a class="headerlink" href="#enable-unsafe-modes" title="Permalink to this headline">¶</a></h2>
+<p>As our platform is intended to be usable with only virtual joystick, this checkbox is provided to disable unsafe flight modes like stabilize, acro, sports etc. You should never fly copter without an actual RC in these manual modes of Ardupilot operation. Joysticks generally don’t have enough tactical feedback required to operate these modes. Please go through mode documentation carefully on ardupilot wiki before engaging it. With flying things you shouldn’t really skip on reading before playing around with them.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="joystick.html" class="btn btn-neutral float-right" title="Joystick Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="adhoc-cell-tower-or-connection-sharing.html" class="btn btn-neutral float-left" title="Adhoc cell tower or connection sharing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

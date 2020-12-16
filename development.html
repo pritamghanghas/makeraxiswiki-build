@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development Setup &mdash; makeraxis 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Troubleshooting FAQs" href="troubleshooting.html" />
+    <link rel="prev" title="Joystick Options" href="joystick.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> makeraxis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="before-you-fly.html">Before You Fly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-support.html">Raspberry Pi Camera Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raspberry-pi-cam-mods.html">Raspberry Pi Camera Mods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adhoc-cell-tower-or-connection-sharing.html">Adhoc cell tower or connection sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="system-control.html">System Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joystick.html">Joystick Options</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-latest-ubuntu">Install latest Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-qt">Install Qt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downlaod-qgc">Downlaod QGC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hoverbird-s-additions-to-qgc">Hoverbird’s additions to QGC.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software-on-companion-computer-raspberry-pi">Software on Companion Computer (Raspberry Pi)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#picontrolserver-service">picontrolserver service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ardupilot-service">ardupilot service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mavproxy">MAVProxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#switching-between-pixhawk-and-sitl">Switching between Pixhawk and SITL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-on-autopilot-pixhawk">Software on Autopilot(pixhawk)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#innovative-ideas-for-development">Innovative Ideas for Development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">makeraxis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Development Setup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development-setup">
+<span id="development"></span><h1>Development Setup<a class="headerlink" href="#development-setup" title="Permalink to this headline">¶</a></h1>
+<p>Here we discuss the software used, from the most bare bone ardupilot parts to the last piece in the puzzle QGC. They are listed in an order of increasing risk and complexity. As a beginner you can probably start from QGC, then move to doing things on companion computer. Almost 99% of special case applications can be achieved doing this. You should look towards changing the autopilot code itself as a last option.
+All forks and code used for our education platforms are located on our github <a class="reference external" href="https://github.com/makeraxis/">page</a></p>
+<p>You can setup the QGC development environment on any desktop platform MAC/Windows/Linux. Linux will probably be the easiest to setup, followed by MAC and then windows. For the sake of simplicity, we will keep our tutorial to Linux only.</p>
+<div class="section" id="install-latest-ubuntu">
+<h2>Install latest Ubuntu<a class="headerlink" href="#install-latest-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>It is generally recommended to install Ubuntu native. But if you are a little afraid to do that, it is ok to do it on VM as well. We prefer virtual box but any vm will do. When using Ubuntu inside a VM you might have to struggle with USB and network port forwarding issues. Nothing unsolvable, but these things do irritate.</p>
+</div>
+<div class="section" id="install-qt">
+<h2>Install Qt<a class="headerlink" href="#install-qt" title="Permalink to this headline">¶</a></h2>
+<p>For installation instructions on your development platform of choice, it is best to use upto date instructions from <a class="reference external" href="http://doc.qt.io/qt-5/gettingstarted.html">here</a>
+If you plan to build QGC app for android also, setup android environment also as explained in the above link.</p>
+<p>The official download server might be slow. You can try one of the <a class="reference external" href="https://download.qt.io/static/mirrorlist/">mirrors</a> US and Japanese mirrors are quite good.</p>
+</div>
+<div class="section" id="downlaod-qgc">
+<h2>Downlaod QGC<a class="headerlink" href="#downlaod-qgc" title="Permalink to this headline">¶</a></h2>
+<p>For compiling QGC follow the instructions in QGC developer guide <a class="reference external" href="https://dev.qgroundcontrol.com/en/">here</a>. As you will be using our platform, it will be better to clone from our QGC <a href="#id1"><span class="problematic" id="id2">`</span></a>repo &lt;<a class="reference external" href="https://github.com/makeraxis/qgroundcontrol">https://github.com/makeraxis/qgroundcontrol</a>&gt;__</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/makeraxis/qgroundcontrol</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hoverbird-s-additions-to-qgc">
+<h2>Hoverbird’s additions to QGC.<a class="headerlink" href="#hoverbird-s-additions-to-qgc" title="Permalink to this headline">¶</a></h2>
+<p>The playground code that we obtained from our partners at <a class="reference external" href="http://senserobotics.com">Sense Robotics</a> adds a few clever things to QGC for quick hacking. The user side aspect of these mods are spread across the usage instructions on our wiki. In this section we will only discuss it from a developer point of view, the code that went into QGC to make that possible.</p>
+</div>
+<div class="section" id="software-on-companion-computer-raspberry-pi">
+<h2>Software on Companion Computer (Raspberry Pi)<a class="headerlink" href="#software-on-companion-computer-raspberry-pi" title="Permalink to this headline">¶</a></h2>
+<p>Raspberry Pi runs a few daemons that make it possible for QGC to properly communicate with the platform. Some of these daemons also provide additional functionality like camera control etc.</p>
+<p>These binaries are located at /home/pi/ardupilot/bins/. The corresponding code will be located one step up in their individually cloned git repositories.</p>
+<p>The development environment is fully setup. You can build any of these binaries yourself and use.</p>
+<div class="section" id="picontrolserver-service">
+<h3>picontrolserver service<a class="headerlink" href="#picontrolserver-service" title="Permalink to this headline">¶</a></h3>
+<p>This is a systemctl service that starts the Qt based http server. Basically it launches the picontrolserver binary using wrapper script <a class="reference external" href="https://github.com/makeraxis/pi_bins/blob/master/picontrolserver.sh">picontrolserver.sh</a> which sets up its runtime environment.</p>
+<p>The serves takes incoming http requests send by QGC and acts on them. It handles camera options, wifi options and it is responsible for setting up MAVlink between vehicle and QGC. Code can be found <a class="reference external" href="https://github.com/makeraxis/picontrolserver">here</a></p>
+</div>
+<div class="section" id="ardupilot-service">
+<h3>ardupilot service<a class="headerlink" href="#ardupilot-service" title="Permalink to this headline">¶</a></h3>
+<p>This service is required only when you want to run ardupilot SITL or using a Raspberry Pi cape like Raspilot. If you are using it a standalone autopilot like Pixhawk. This server doesn’t run anything. The service is handled by shell script <a class="reference external" href="https://github.com/makeraxis/pi_bins/blob/master/start_ardupilot.sh">start_ardupilot.sh</a></p>
+</div>
+<div class="section" id="mavproxy">
+<h3>MAVProxy<a class="headerlink" href="#mavproxy" title="Permalink to this headline">¶</a></h3>
+<p>We use MAVProxy to dynamically setup a mavlink UDP line to the QGC that requests it. Basically once you have wifi connected, QGC discovers the Vehicle on local LAN using beacons sent out by picontrolserver. Once discovered it asks picontrolserver to start sending mavlink packets to it. Picontrolsever removes any existing instance of MAVProxy and laucnhes a new one with IP of QGC as target.</p>
+<p>picontrolserver invokes <a class="reference external" href="https://github.com/makeraxis/pi_bins/blob/master/start_mavproxy.sh">start_mavproxy.sh</a> with the target IP address to achieve this.</p>
+</div>
+<div class="section" id="switching-between-pixhawk-and-sitl">
+<h3>Switching between Pixhawk and SITL<a class="headerlink" href="#switching-between-pixhawk-and-sitl" title="Permalink to this headline">¶</a></h3>
+<p>Pi has a full clone of ardupilot as well along with development environment. This helps in two ways. You can run SITL to test your newly developed QGC features. If you go as far as writing new features for ardupilot firmware itself, you can test them through SITL before actually using it on pixhawk.</p>
+<p>the directory /home/pi/ardupilot/bins/ is actaully a clone of <a class="reference external" href="https://github.com/makeraxis/pi_bins">https://github.com/makeraxis/pi_bins</a> and contains different branches for SITL and pixhawk. Stop picontrolserver and arudpilot services using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">systemctl stop picontrolserver.service</span>
+<span class="go">systemctl stop ardupilot.service</span>
+</pre></div>
+</div>
+<p>Then if you want to work with SITL, switch to pi3_sitl_onboardwifi branch using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git fetch origin # this will update your repo</span>
+<span class="go">git checkout -t origin/pi3_sitl_onboardwifi</span>
+</pre></div>
+</div>
+<p>if you want to work with Pixhawk, switch to pi3_pixhawk_onbaordwifi branch using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git checkout -t origin/pi3_pixhawk_onbaordwifi</span>
+</pre></div>
+</div>
+<div class="youtube_wrapper" style="">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/n3PlTJ_fV_M" style="border: 0; height: 345px; width: 560px">
+</iframe></div></div>
+</div>
+<div class="section" id="software-on-autopilot-pixhawk">
+<h2>Software on Autopilot(pixhawk)<a class="headerlink" href="#software-on-autopilot-pixhawk" title="Permalink to this headline">¶</a></h2>
+<p>We run Ardupilot on Pixhawk. The Ardupilot wiki <a class="reference external" href="http://ardupilot.org/dev/docs/building-the-code.html">here</a> has excellent instructions on how to setup a build environment for ardupilot itself. As a beginner you will never need to do this. Changing the autopilot code is more specialized work and you should not do it unless you have a good reason to do so. If you can manage what you want on the companion computer, mavpoxy or QGC, it is always better as these are relatively low risk components when compared to autopilot code.</p>
+</div>
+<div class="section" id="innovative-ideas-for-development">
+<h2>Innovative Ideas for Development<a class="headerlink" href="#innovative-ideas-for-development" title="Permalink to this headline">¶</a></h2>
+<p>You can do a lot of things with Ardupilot and Raspberry Pi. Ardupilot project maintains a list of good list of such ideas especially for students <a class="reference external" href="http://ardupilot.org/dev/docs/gsoc-ideas-list.html">here</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="joystick.html" class="btn btn-neutral float-left" title="Joystick Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, Randhir Ghanghas
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
